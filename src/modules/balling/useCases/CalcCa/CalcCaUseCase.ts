@@ -1,4 +1,5 @@
-import { iCalcCaDTO } from "../dtos/ICalcCaDTO";
+import { iCalcCaDTO } from "../../dtos/ICalcCaDTO";
+import { Round } from "@shared/utils/Round";
 
 
 class CalCaUseCase {
@@ -19,8 +20,13 @@ class CalCaUseCase {
             porém este volume vai precisar de ajuste conforme os corais vão crescendo e conforme
             novos vão sendo introduzidos.
         */
+
+        const round = new Round();
+
         let solutionPrepared: number;
         let caValue: number;
+        let consumptionReef: number;
+
 
         if (solutionSize === 3) {
             solutionPrepared = 66.60;
@@ -28,7 +34,13 @@ class CalCaUseCase {
             solutionPrepared = 20;
         };
 
-        caValue = (consumption * reefSize ) / solutionPrepared;
+        console.log(consumption , reefSize);
+        consumptionReef = round.execute((consumption * reefSize), 2);
+        console.log(consumptionReef);
+
+        console.log(consumptionReef , solutionPrepared);
+        caValue = round.execute((consumptionReef / solutionPrepared), 2);
+        console.log(caValue);
 
         return caValue;
     }

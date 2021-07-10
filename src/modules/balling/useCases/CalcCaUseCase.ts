@@ -25,7 +25,7 @@ class CalCaUseCase {
         if (solutionSize === 3) {
             solutionPrepared = 66.60;
         } else {
-            solutionPrepared = 66.60;
+            solutionPrepared = 20;
         };
 
         caValue = (consumption * reefSize ) / solutionPrepared;
@@ -33,3 +33,5 @@ class CalCaUseCase {
         return caValue;
     }
 }
+
+export { CalCaUseCase };

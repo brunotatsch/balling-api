@@ -34,13 +34,13 @@ class CalCaUseCase {
             solutionPrepared = 20;
         };
 
-        console.log(consumption , reefSize);
+        //console.log(consumption , reefSize);
         consumptionReef = round.execute((consumption * reefSize), 2);
-        console.log(consumptionReef);
+        //console.log(consumptionReef);
 
-        console.log(consumptionReef , solutionPrepared);
+        //console.log(consumptionReef , solutionPrepared);
         caValue = round.execute((consumptionReef / solutionPrepared), 2);
-        console.log(caValue);
+        //console.log(caValue);
 
         return caValue;
     }
